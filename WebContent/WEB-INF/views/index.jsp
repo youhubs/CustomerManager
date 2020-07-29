@@ -32,6 +32,8 @@
 				<td>${customer.address}</td>
 				<td>
 					<a href="edit?id=${customer.id}">Edit</a>
+					&nbsp;&nbsp;
+					<a href="delete?id=${customer.id}">Delete</a>
 				</td>
 			</tr>
 			</c:forEach>

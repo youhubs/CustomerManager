@@ -24,4 +24,8 @@ public class CustomerService {
 		Optional<Customer> result = repo.findById(id);
 		return result.get();
 	}
+	
+	public void delete(long id) {
+		repo.deleteById(id);
+	}
 }
