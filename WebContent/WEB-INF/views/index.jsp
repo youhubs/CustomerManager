@@ -7,6 +7,14 @@
 <title>Customer Manager</title>
 </head>
 <body>
-	<h1>${message}</h1>
+	<div align="center">
+		<h1>Customer Manager</h1>
+		<form method="get" action="search">
+			<input type="text" name="keyword" /> &nbsp; <input type="submit" value="Search" />
+		</form>
+		<h3>
+			<a href="/new">New Customer</a>
+		</h3>
+	</div>
 </body>
 </html>
