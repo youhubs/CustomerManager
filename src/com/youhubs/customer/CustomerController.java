@@ -31,28 +31,37 @@ public class CustomerController {
 		model.put("customer", new Customer());
 		return "new_customer";
 	}
-	
-	@RequestMapping(value="/save", method=RequestMethod.POST)
+
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String saveCustomer(@ModelAttribute("customer") Customer customer) {
 		service.save(customer);
-		
+
 		return "redirect:/";
 	}
-	
+
 	@RequestMapping("/edit")
 	public ModelAndView editCustomerForm(@RequestParam long id) {
 		ModelAndView mav = new ModelAndView("edit_customer");
 		Customer customer = service.get(id);
 		mav.addObject("customer", customer);
-		
+
 		return mav;
 	}
-	
+
 	@RequestMapping("/delete")
 	public String deleteCustomer(@RequestParam long id) {
 		service.delete(id);
-		
+
 		return "redirect:/";
 	}
-	
+
+	@RequestMapping("/search")
+	public ModelAndView search(@RequestParam("keyword") String keyword) {
+		ModelAndView mav = new ModelAndView("search");
+		List<Customer> customers = service.search(keyword);
+		mav.addObject("result", customers);
+
+		return mav;
+	}
+
 }

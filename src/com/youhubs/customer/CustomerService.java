@@ -15,17 +15,21 @@ public class CustomerService {
 	public List<Customer> listCustomer() {
 		return (List<Customer>) repo.findAll();
 	}
-	
+
 	public void save(Customer customer) {
 		repo.save(customer);
 	}
-	
+
 	public Customer get(long id) {
 		Optional<Customer> result = repo.findById(id);
 		return result.get();
 	}
-	
+
 	public void delete(long id) {
 		repo.deleteById(id);
+	}
+
+	public List<Customer> search(String keyword) {
+		return repo.search(keyword);
 	}
 }
