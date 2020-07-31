@@ -1,4 +1,4 @@
-This is a Spring MVC project with Hibernate and Spring Data JPA. This Maven project is using Eclipse, Tomcat, and MySQL.
+This is a Maven project with Spring MVC, Spring Data JPA, Hibernate, MySQL, Tomcat, and Eclipse.
 ### Steps:
 1. Start new Dynamic Web Project
 2. Convert to Maven project
